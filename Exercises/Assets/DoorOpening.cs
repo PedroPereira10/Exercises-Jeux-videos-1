@@ -15,6 +15,11 @@ public class DoorOpening : MonoBehaviour
         {
             _negativeOrPositive = -1;
         }
+
+        if (transform.localScale.y <= 0)
+        {
+            _negativeOrPositive = 1;
+        }
     }
 }
 
