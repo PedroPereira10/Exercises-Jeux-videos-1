@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00034475198, g: 0.00032588153, b: 0.00035407927, a: 1}
+  m_IndirectSpecularColor: {r: 0.000343568, g: 0.00032530486, b: 0.00035291692, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -364,8 +364,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f8314cf3a0bd4438a9b569a353ebd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackballMoveScript: {fileID: 333726972}
-  whiteballMoveScript: {fileID: 241439801}
+  _blackballMoveScript: {fileID: 333726972}
+  _whiteballMoveScript: {fileID: 241439801}
+  _blackwall: {fileID: 1028622305}
+  _whitewall: {fileID: 4060992758887588144}
 --- !u!4 &500950431
 Transform:
   m_ObjectHideFlags: 0
@@ -390,7 +392,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1485544283392787720, guid: ceb5cfdb2a5c33f478647cb52dca05bc, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2638294186008156874, guid: ceb5cfdb2a5c33f478647cb52dca05bc, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -633,6 +635,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1028622305 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1485544283392787720, guid: ceb5cfdb2a5c33f478647cb52dca05bc, type: 3}
+  m_PrefabInstance: {fileID: 524269583}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1912170826
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,7 +882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485544283392787720, guid: ceb5cfdb2a5c33f478647cb52dca05bc, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2638294186008156874, guid: ceb5cfdb2a5c33f478647cb52dca05bc, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -938,5 +945,10 @@ PrefabInstance:
 --- !u!4 &4060992758887588143 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4736082456285940419, guid: ceb5cfdb2a5c33f478647cb52dca05bc, type: 3}
+  m_PrefabInstance: {fileID: 4060992758887588142}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4060992758887588144 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1485544283392787720, guid: ceb5cfdb2a5c33f478647cb52dca05bc, type: 3}
   m_PrefabInstance: {fileID: 4060992758887588142}
   m_PrefabAsset: {fileID: 0}
