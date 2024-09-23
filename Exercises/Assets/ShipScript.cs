@@ -5,7 +5,6 @@ using UnityEngine.Rendering;
 
 public class ShipScript : MonoBehaviour
 {
-    [SerializeField] private float _speed;
     [SerializeField] private float _rotation;
     [SerializeField] Rigidbody2D _rigidbody;
     [SerializeField] private float _acceleration = 0.5f;
