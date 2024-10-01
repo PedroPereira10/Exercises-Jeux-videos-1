@@ -18,4 +18,6 @@ public class Movement : MonoBehaviour
         float y_position = Mathf.PingPong(_timer, _maxY - _minY) + _minY;
         transform.position  = new Vector3(0,y_position,0);
     }
+
+   
 }
