@@ -5,35 +5,26 @@ using UnityEngine;
 public class RayCast1 : MonoBehaviour
 {
     [SerializeField] float _rotationSpeed = 5f;
-    [SerializeField] Transform _radarHead;
+    [SerializeField] private LayerMask _layer;
+    [SerializeField] private float _rayCastLenght = 1000f;
 
-    void FixedUpdate()
+    void Update()
     {
-        transform.Rotate(Vector3.up, _rotationSpeed * Time.deltaTime);
-
-        Vector3 origine = _radarHead.position;
-        Vector3 direction = _radarHead.forward;
+        transform.Rotate(0, _rotationSpeed * Time.deltaTime,0);
+        Vector3 origine = transform.position;
+        Vector3 direction = transform.forward;
         Ray ray = new Ray(origine, direction);
         RaycastHit hit;
 
-        Debug.DrawLine(origine, direction*1000f, Color.red);
-
-        if (Physics.Raycast(ray, out hit, 1000f))
+        if (Physics.Raycast(ray, out hit, _rayCastLenght, _layer))
         {
-            string objectName = hit.collider.gameObject.name;
-
-            if (objectName == "Cube 1" || objectName == "Cube 2")
-            {
-                Debug.Log("Le Raycast touched the cube");
-            }
-            else if (objectName == "Wall")
-            {
-                Debug.Log("Le Raycast touched the wall.");
-            }
+            string name = hit.collider.gameObject.name;
+            Debug.Log($"Name:{name} --- Hit Distance: {hit.distance} --- Hit Position: {hit.point} --- {name} position: {hit.collider.transform.position}");
+            Debug.DrawRay(origine, direction * hit.distance, Color.red);
         }
         else
         {
-            Debug.Log("Le Raycast touches nothing.");
+            Debug.DrawRay(origine, direction * _rayCastLenght, Color.red);
         }
     }
 }
