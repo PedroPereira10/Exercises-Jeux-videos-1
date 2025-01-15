@@ -34,11 +34,5 @@ public class Randomizer : MonoBehaviour
 
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
 
