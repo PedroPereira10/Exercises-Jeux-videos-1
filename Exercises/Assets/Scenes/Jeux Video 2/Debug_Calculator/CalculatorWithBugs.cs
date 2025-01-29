@@ -84,8 +84,8 @@ public class CalculatorWithBugs : MonoBehaviour
     public void Factorise()
     {
         _textValue.text = $"/";
-        _isCalculationResult = false;
         _currentOperation = 4;
+        _isCalculationResult = false;
         EnterPreviousNumber();
     }
 
