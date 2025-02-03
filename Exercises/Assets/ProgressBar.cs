@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ProgressBar : MonoBehaviour
 {
-    [SerializeField] private Image progressBar;
+    [SerializeField] private Image _progressBar;
     private float fillAmount = 0;
 
     private void OnEnable()
@@ -18,8 +18,16 @@ public class ProgressBar : MonoBehaviour
 
     private void IncreaseProgress()
     {
-        fillAmount += 1f; 
+        if (_progressBar == null)
+        {
+            Debug.LogError("ProgressBar reference is not set!");
+            return;
+        }
+
+        fillAmount += 0.1f; 
         if (fillAmount > 1) fillAmount = 1; 
-        progressBar.fillAmount = fillAmount;
+        _progressBar.fillAmount = fillAmount;
+
+        Debug.Log("Progress increased to: " + fillAmount); 
     }
 }
