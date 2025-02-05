@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 53552489}
   - component: {fileID: 53552488}
+  - component: {fileID: 53552490}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -217,6 +218,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &53552490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53552487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &53579973
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +633,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &252221968
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -629,7 +650,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &304454041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1033,7 +1055,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &417673529
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1050,7 +1072,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &886411246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,10 +1305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f561720759507844f9f469756203bd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _openBtn: {fileID: 1753676113}
-  _unlockBtn: {fileID: 1901958643}
-  _closeBtnImage: {fileID: 21300000, guid: 61068066490dba7428abaa04ffeb5eac, type: 3}
-  _openBtnImage: {fileID: 21300000, guid: cfa29911603394b4994ce062b0141697, type: 3}
 --- !u!1 &1385213603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,11 +1346,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1385213603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cfeed6a410c08b4aa6cf20ead24f8bf, type: 3}
+  m_Script: {fileID: 11500000, guid: e7ecd849c3680e842bfc816388ee638c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _doorRigth: {fileID: 417673529}
-  _doorLeft: {fileID: 252221968}
+  doorPrefabs:
+  - {fileID: 417673528}
+  - {fileID: 252221967}
 --- !u!1001 &1421394897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2022,9 +2042,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DoorButtons, Assembly-CSharp
-        m_MethodName: OpenDoor
+      - m_Target: {fileID: 1385213606}
+        m_TargetAssemblyTypeName: DoorManager, Assembly-CSharp
+        m_MethodName: ToggleDoor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2354,9 +2374,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DoorButtons, Assembly-CSharp
-        m_MethodName: UnlockDoors
+      - m_Target: {fileID: 1385213606}
+        m_TargetAssemblyTypeName: DoorManager, Assembly-CSharp
+        m_MethodName: UnlockDoor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
