@@ -11,7 +11,5 @@ public class ColorLerp : MonoBehaviour
     {
         _timer += Time.deltaTime;
         _material.color = Color.Lerp(Color.black, Color.red, (_timer / 5f));
-
-
     }
 }
