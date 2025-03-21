@@ -18,11 +18,12 @@ public class SaveSlot : MonoBehaviour
 
     public void Load()
     {
-        
+        _saveLoadJSON.LoadFromJson(Application.persistentDataPath+$"/{_nameTxt.text}.json");
     }
 
     public void Delete()
     {
-
+        _saveLoadJSON.DeleteSavefile(_nameTxt.text);
+        Destroy(gameObject);
     }
 }

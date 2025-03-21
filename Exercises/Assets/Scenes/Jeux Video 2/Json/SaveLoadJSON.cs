@@ -79,10 +79,7 @@ public class SaveLoadJSON : MonoBehaviour
     public void SaveCurrentPlayerData()
     {
         string savePlayerData = JsonUtility.ToJson(_currentData);
-
-        //File.WriteAllText(Application.persistentDataPath + $"{_currentData._name}.json",savePlayerData);
         File.WriteAllText(Application.persistentDataPath + $"/{_currentData._name}.json", savePlayerData);
-
         Debug.Log("Save File created at:" + Application.persistentDataPath + $"{_currentData._name}.json");
     }
 
